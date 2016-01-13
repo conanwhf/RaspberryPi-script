@@ -17,3 +17,5 @@ echo "Please run the default config tool!(change password, exter disk)"
 echo "Please run the default config tool!(change password, exter disk)"
 echo "Please run the default config tool!(change password, exter disk)"
 
+sudo raspi-config
+

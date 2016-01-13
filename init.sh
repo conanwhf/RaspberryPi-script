@@ -12,13 +12,19 @@ sudo apt-get -y install fcitx fcitx-googlepinyin fcitx-module-cloudpinyin fcitx-
 sudo "LC_ALL=\"en_US.UTF-8\" "  >> /etc/environment
 sudo "LANG=\”en_US_.UTF-8\" " >> /etc/environment
 # USB
-sudo echo "#USB\nmax_usb_current=1" >> /boot/config.txt
+echo "# USB Voltage" | sudo tee -a /boot/config.txt
+echo "max_usb_current=1" | sudo tee -a /boot/config.txt
 # Samba
 sudo apt-get -y install samba
-sudo echo "[pi]\ncomment = Conan file space\path = \/home\/pi\/work\nread only = no\n public = yes" >> /etc/samba/smb.conf
+echo "[pi]" | sudo tee -a /etc/samba/smb.conf
+echo "comment = Conan file space" | sudo tee -a /etc/samba/smb.conf
+echo "path = /home/pi/work" | sudo tee -a /etc/samba/smb.conf
+echo "read only = no" | sudo tee -a /etc/samba/smb.conf
+echo "public = yes" | sudo tee -a /etc/samba/smb.conf
 sudo /etc/init.d/samba restart
 # SSH
-sudo echo "ClientAliveInterval 60\nClientAliveCountMax 2\n" >> /etc/ssh/sshd_config
+#echo "ClientAliveInterval 60" | sudo tee -a /etc/ssh/sshd_config
+#echo "ClientAliveCountMax 2" | sudo tee -a /etc/ssh/sshd_config
 # zip
 sudo apt-get -y install zip
 
