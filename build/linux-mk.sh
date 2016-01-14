@@ -1,3 +1,4 @@
+#!/bin/bash
 arch=arm
 toolchain=armv7-rpi2conan-linux-gnueabihf-
 KERNEL=kernel7

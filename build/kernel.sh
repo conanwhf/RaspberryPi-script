@@ -1,3 +1,4 @@
+#!/bin/bash
 KERNEL=kernel7
 make bcm2709_defconfig
 make menuconfig
