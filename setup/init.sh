@@ -6,11 +6,12 @@ sudo rpi-update
 # vi
 sudo apt-get -y remove vim-common
 sudo apt-get -y install vim
+cp vimrc ~/.vimrc
 # Chinese
 sudo apt-get -y install ttf-wqy-zenhei ttf-wqy-microhei
 sudo apt-get -y install fcitx fcitx-googlepinyin fcitx-module-cloudpinyin fcitx-sunpinyin
-sudo "LC_ALL=\"en_US.UTF-8\" "  >> /etc/environment
-sudo "LANG=\”en_US_.UTF-8\" " >> /etc/environment
+echo LC_ALL="en_US.UTF-8" | sudo tee -a  /etc/environment
+echo LANG="en_US.UTF-8" | sudo tee -a /etc/environment
 # USB
 echo "# USB Voltage" | sudo tee -a /boot/config.txt
 echo "max_usb_current=1" | sudo tee -a /boot/config.txt
