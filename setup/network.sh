@@ -1,3 +1,4 @@
+#!/bin/bash
 # IP
 sudo cp interfaces /etc/network/interfaces
 sudo systemctl daemon-reload

@@ -1,3 +1,4 @@
+#!/bin/bash
 # Voice
 sudo apt-get -y install espeak
 
