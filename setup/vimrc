@@ -5,25 +5,16 @@ set term=ansi
 syntax on
 
 " Color specifications. Change them as you would like.
-
-hi Comment	term=none	ctermfg=blue	guifg=Gray
-hi Constant	term=underline	ctermfg=cyan	guifg=Cyan
-hi Identifier	term=underline	ctermfg=green	guifg=White
-hi Statement	term=bold	ctermfg=gray	guifg=White
-hi PreProc	term=underline	ctermfg=magenta	guifg=Magenta
-hi Type		term=underline	ctermfg=red	guifg=White
-hi Special	term=bold	ctermfg=yellow	guifg=Blue
-hi Nontext	term=bold	ctermfg=red	guifg=Red
-hi Normal	guifg=Yellow	ctermfg=white   guibg=#00007F
-
-hi Comment      cterm=none	gui=none
-hi Constant     cterm=bold	gui=none
-hi Identifier   cterm=none	gui=none
-hi Statement    cterm=bold	gui=none
-hi PreProc      cterm=bold	gui=none
-hi Type         cterm=bold	gui=none
-hi Special      cterm=bold	gui=none
-hi NonText	cterm=bold	gui=none
+hi Comment      term=none       ctermfg=blue    guifg=gray
+hi Constant     term=underline  ctermfg=cyan    guifg=cyan
+hi Identifier   term=underline  ctermfg=green   guifg=white
+hi Statement    term=bold       ctermfg=gray    guifg=white
+hi PreProc      term=underline  ctermfg=magenta guifg=magenta
+hi Type         term=underline  ctermfg=red     guifg=white
+hi Special      term=bold       ctermfg=yellow  guifg=blue
+hi Search      term=bold       ctermfg=black  ctermbg=yellow
+hi Nontext      term=bold       ctermfg=red     guifg=red
+hi Normal       term=none       ctermfg=white   guifg=white
 
 " Special highlighting for XML
 hi xmlTag ctermfg=blue cterm=bold guifg=white
@@ -38,10 +29,10 @@ set backspace=2		" Allows insert-mode backspace to work as one expects
 set cindent
 set cinkeys=0{,0},:,!^F,o,O,e	" See "cinkeys"; this stops "#" from indenting
 set fileformat=unix	" No crazy CR/LF
-set listchars=tab:\ \ ,trail:· " If you do ":set list", shows trailing spaces
+#set listchars=tab:\ \ ,trail:ï¿½ " If you do ":set list", shows trailing spaces
 set mouse=		" I don't like the mouse in VIM
 set nobackup		" Don't use a backup file (also see writebackup)
-set nohlsearch		" Don't highlight search terms
+set hlsearch		" highlight search terms
 set nojoinspaces	" One space after a "." rather than 2
 set ruler		" Show the line position at the bottom of the window
 set scrolloff=1		" Minimum lines between cursor and window edge
@@ -53,6 +44,16 @@ set textwidth=80	" Maximum line width
 set viminfo='0,\"100,	" Stay at the start of a file when opening it
 set whichwrap=<,>,[,],h,l " Allows for left/right keys to wrap across lines
 set writebackup		" Write temporary backup files in case we crash
+set incsearch
+
+set foldenable              "
+set foldmethod=syntax       "
+set foldcolumn=0            "
+setlocal foldlevel=1        "
+set foldlevelstart=99       " almost disable
+"set foldclose=all          "
+nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
+
 
 if version >= 600
 

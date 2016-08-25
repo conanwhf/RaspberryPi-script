@@ -2,6 +2,7 @@
 # Automatically generated file; DO NOT EDIT.
 # Crosstool-NG Configuration
 #
+CT_CONFIGURE_has_static_link=y
 CT_CONFIGURE_has_xz=y
 CT_CONFIGURE_has_svn=y
 CT_MODULES=y
@@ -24,7 +25,7 @@ CT_EXPERIMENTAL=y
 CT_LOCAL_TARBALLS_DIR="${HOME}/toolchain"
 # CT_SAVE_TARBALLS is not set
 CT_WORK_DIR="${CT_TOP_DIR}/.build"
-CT_PREFIX_DIR="${HOME}/x-tools/${CT_TARGET}"
+CT_PREFIX_DIR="/opt/${CT_TARGET}"
 CT_INSTALL_DIR="${CT_PREFIX_DIR}"
 CT_RM_RF_PREFIX_DIR=y
 CT_REMOVE_DOCS=y
@@ -188,7 +189,7 @@ CT_TOOLCHAIN_BUGURL=""
 #
 # Tuple completion and aliasing
 #
-CT_TARGET_VENDOR="rpi2conan"
+CT_TARGET_VENDOR="rpi"
 CT_TARGET_ALIAS_SED_EXPR=""
 CT_TARGET_ALIAS=""
 
@@ -218,15 +219,15 @@ CT_BUILD_SUFFIX=""
 #
 CT_KERNEL_SUPPORTS_SHARED_LIBS=y
 CT_KERNEL="linux"
-CT_KERNEL_VERSION="4.1.15"
+CT_KERNEL_VERSION="4.4.3"
 # CT_KERNEL_bare_metal is not set
 CT_KERNEL_linux=y
 CT_KERNEL_bare_metal_AVAILABLE=y
 CT_KERNEL_linux_AVAILABLE=y
 # CT_KERNEL_LINUX_CUSTOM is not set
+CT_KERNEL_V_4_4=y
 # CT_KERNEL_V_4_3 is not set
-# CT_KERNEL_V_4_2 is not set
-CT_KERNEL_V_4_1=y
+# CT_KERNEL_V_4_1 is not set
 # CT_KERNEL_V_3_18 is not set
 # CT_KERNEL_V_3_14 is not set
 # CT_KERNEL_V_3_12 is not set
@@ -263,6 +264,7 @@ CT_BINUTILS_binutils=y
 # CT_BINUTILS_CUSTOM is not set
 CT_BINUTILS_VERSION="2.25.1"
 # CT_CC_BINUTILS_SHOW_LINARO is not set
+# CT_BINUTILS_V_2_26 is not set
 CT_BINUTILS_V_2_25_1=y
 # CT_BINUTILS_V_2_24 is not set
 # CT_BINUTILS_V_2_23_2 is not set
@@ -307,25 +309,12 @@ CT_LIBC_glibc_AVAILABLE=y
 CT_THREADS="nptl"
 # CT_LIBC_GLIBC_CUSTOM is not set
 # CT_CC_GLIBC_SHOW_LINARO is not set
+# CT_LIBC_GLIBC_V_2_23 is not set
 # CT_LIBC_GLIBC_V_2_22 is not set
 # CT_LIBC_GLIBC_V_2_21 is not set
 # CT_LIBC_GLIBC_V_2_20 is not set
 CT_LIBC_GLIBC_V_2_19=y
 # CT_LIBC_GLIBC_V_2_18 is not set
-# CT_LIBC_GLIBC_V_2_17 is not set
-# CT_LIBC_GLIBC_V_2_16_0 is not set
-# CT_LIBC_GLIBC_V_2_15 is not set
-# CT_LIBC_GLIBC_V_2_14_1 is not set
-# CT_LIBC_GLIBC_V_2_14 is not set
-# CT_LIBC_GLIBC_V_2_13 is not set
-# CT_LIBC_GLIBC_V_2_12_2 is not set
-# CT_LIBC_GLIBC_V_2_12_1 is not set
-# CT_LIBC_GLIBC_V_2_11_1 is not set
-# CT_LIBC_GLIBC_V_2_11 is not set
-# CT_LIBC_GLIBC_V_2_10_1 is not set
-# CT_LIBC_GLIBC_V_2_9 is not set
-# CT_LIBC_GLIBC_V_2_8 is not set
-CT_LIBC_GLIBC_2_17_or_later=y
 CT_LIBC_mingw_AVAILABLE=y
 CT_LIBC_musl_AVAILABLE=y
 CT_LIBC_newlib_AVAILABLE=y
@@ -380,7 +369,7 @@ CT_LIBC_ADDONS_LIST=""
 # CT_LIBC_GLIBC_KERNEL_VERSION_NONE is not set
 CT_LIBC_GLIBC_KERNEL_VERSION_AS_HEADERS=y
 # CT_LIBC_GLIBC_KERNEL_VERSION_CHOSEN is not set
-CT_LIBC_GLIBC_MIN_KERNEL="4.1.15"
+CT_LIBC_GLIBC_MIN_KERNEL="4.4.3"
 
 #
 # C compiler
@@ -410,7 +399,6 @@ CT_CC_GCC_ENABLE_PLUGINS=y
 CT_CC_GCC_GOLD=y
 CT_CC_GCC_USE_GMP_MPFR=y
 CT_CC_GCC_USE_MPC=y
-CT_CC_GCC_USE_LIBELF=y
 CT_CC_GCC_HAS_LIBQUADMATH=y
 CT_CC_GCC_HAS_LIBSANITIZER=y
 # CT_CC_LANG_FORTRAN is not set
@@ -492,6 +480,8 @@ CT_GDB_GDBSERVER_STATIC=y
 # CT_GDB_CUSTOM is not set
 CT_GDB_VERSION="7.10"
 # CT_DEBUG_GDB_SHOW_LINARO is not set
+# CT_GDB_V_7_11 is not set
+# CT_GDB_V_7_10_1 is not set
 CT_GDB_V_7_10=y
 # CT_GDB_V_7_9_1 is not set
 # CT_GDB_V_7_9 is not set
@@ -530,7 +520,6 @@ CT_MPFR_NEEDED=y
 CT_ISL_NEEDED=y
 CT_CLOOG_NEEDED=y
 CT_MPC_NEEDED=y
-CT_LIBELF_NEEDED=y
 CT_EXPAT_NEEDED=y
 CT_NCURSES_NEEDED=y
 CT_COMPLIBS=y
@@ -541,7 +530,6 @@ CT_MPFR=y
 CT_ISL=y
 CT_CLOOG=y
 CT_MPC=y
-CT_LIBELF=y
 CT_EXPAT=y
 CT_NCURSES=y
 CT_LIBICONV_V_1_14=y
@@ -587,9 +575,6 @@ CT_MPC_V_1_0_3=y
 # CT_MPC_V_0_8_1 is not set
 # CT_MPC_V_0_7 is not set
 CT_MPC_VERSION="1.0.3"
-CT_LIBELF_V_0_8_13=y
-# CT_LIBELF_V_0_8_12 is not set
-CT_LIBELF_VERSION="0.8.13"
 CT_EXPAT_V_2_1_0=y
 CT_EXPAT_VERSION="2.1.0"
 CT_NCURSES_V_6_0=y
