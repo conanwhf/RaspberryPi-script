@@ -72,7 +72,7 @@ if [ -f /etc/dphys-swapfile ]; then
 	fi
 	EXCLUDE_SWAPFILE="--exclude $SWAPFILE"
 fi
-sudo rsync --force -rltWDEgopt --delete \
+sudo rsync --force -rltWDEgopt --delete --stats --progress\
 	$EXCLUDE_SWAPFILE \
 	--exclude '.gvfs' \
 	--exclude '/dev' \

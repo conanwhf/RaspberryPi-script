@@ -1,5 +1,9 @@
 # RaspberryPi-script
-树莓派相关配置&脚本，适用于rpi2
+树莓派相关配置&脚本，适用于rpi2B及3B硬件。
+
+## rpi-backup
+备份系统成一个可烧录的image，详细说明参见：http://conanwhf.github.io/2016/08/25/rpi-cloneimg/
+
 
 ## rpi-clone
 一个超好用的备份工具，感谢开发者！
@@ -7,7 +11,7 @@
 
 ## build-编译脚本
 - build-toolchain.sh，在debian的系统中编译交叉编译工具的脚本
-- crossng_config，交叉编译工具编译配置文件，适用于rpi2
+- crossng_config，交叉编译工具编译配置文件，适用于rpi2B和rpi3B
 - kernel_config，内核配置，来源于官方
 - kernel.sh，内核编译脚本，跑在树莓派上
 - linux-mk.sh，内核编译脚本，跑在PC上，交叉编译
@@ -19,7 +23,7 @@
 - interfaces,tightvncserver,vimrc，脚本运行所需对应的配置文件
 
 ## sensor
-一些外部传感器获取状态的Demo，Python写成
+一些外部传感器获取状态的Demo，Python写成，rpi2B测试通过
 - libSetup.sh，开发包环境配置脚本，包括I2C,GPIO,UART,Bluetooth等
 - air_qu.py，空气质量传感器，Uart协议
 - bmp180.py，BMP180气压传感器，I2C
