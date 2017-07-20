@@ -60,8 +60,7 @@ mkdir -p $mountb $mountr
 # backup /boot
 sudo mount -t vfat ${device}p1 $mountb
 sudo cp -rfp /boot/* $mountb
-sync 
-sudo umount $mountb
+sync
 echo "...Boot partition done"
 # backup /root
 sudo mount -t ext4 ${device}p2 $mountr
@@ -99,7 +98,6 @@ sudo rm -f $mountr/etc/udev/rules.d/70-persistent-net.rules
 
 sync 
 ls -lia $mountr/home/pi/
-sudo umount $mountr
 echo "...Root partition done"
 # if using the dump/restore 
 # tmp=$usbmount/root.ext4
@@ -108,6 +106,19 @@ echo "...Root partition done"
 # cd $mountr
 # sudo dump -0uaf - / | sudo restore -rf -
 # cd
+
+
+# replace PARTUUID
+opartuuidb=`blkid -o export /dev/mmcblk0p1 | grep PARTUUID`
+opartuuidr=`blkid -o export /dev/mmcblk0p2 | grep PARTUUID`
+npartuuidb=`blkid -o export ${device}p1 | grep PARTUUID`
+npartuuidr=`blkid -o export ${device}p2 | grep PARTUUID`
+sudo sed -i "s/$opartuuidr/$npartuuidr/g" $mountb/cmdline.txt
+sudo sed -i "s/$opartuuidb/$npartuuidb/g" $mountr/etc/fstab
+sudo sed -i "s/$opartuuidr/$npartuuidr/g" $mountr/etc/fstab
+
+sudo umount $mountb
+sudo umount $mountr
 
 # umount loop device
 sudo kpartx -d $loopdevice
