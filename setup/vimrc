@@ -29,14 +29,13 @@ set backspace=2		" Allows insert-mode backspace to work as one expects
 set cindent
 set cinkeys=0{,0},:,!^F,o,O,e	" See "cinkeys"; this stops "#" from indenting
 set fileformat=unix	" No crazy CR/LF
-#set listchars=tab:\ \ ,trail:� " If you do ":set list", shows trailing spaces
 set mouse=		" I don't like the mouse in VIM
 set nobackup		" Don't use a backup file (also see writebackup)
 set hlsearch		" highlight search terms
 set nojoinspaces	" One space after a "." rather than 2
 set ruler		" Show the line position at the bottom of the window
 set scrolloff=1		" Minimum lines between cursor and window edge
-set shiftwidth=4	" Indent by 4 columns (for C functions, etc).
+set shiftwidth=2	" Indent by 4 columns (for C functions, etc).
 set showcmd		" Show partially typed commands
 set showmatch		" Show parentheses matching
 set smartindent		" Indent settings (really only the cindent matters)
